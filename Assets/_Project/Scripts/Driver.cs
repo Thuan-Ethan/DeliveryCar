@@ -17,22 +17,22 @@ public class Driver : MonoBehaviour
         if (Keyboard.current.aKey.isPressed)
         {
             steer = 1f;
-            Debug.Log("Steering Left");
+            //Debug.Log("Steering Left");
         }
         else if (Keyboard.current.dKey.isPressed)
         {
             steer = -1f;
-            Debug.Log("Steering Right");
+            //Debug.Log("Steering Right");
         }
         else if (Keyboard.current.wKey.isPressed)
         {
             move = 1f;
-            Debug.Log("Moving Forward");
+            //Debug.Log("Moving Forward");
         }
         else if (Keyboard.current.sKey.isPressed)
         {
             move = -1f;
-            Debug.Log("Moving Backward");
+            //Debug.Log("Moving Backward");
         }
 
         float steerAmount = steer * steerSpeed * Time.deltaTime;

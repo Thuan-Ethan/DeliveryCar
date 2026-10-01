@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class Delivery : MonoBehaviour
 {
     // Use bool to check if the tag of the other game object is "Package"
     bool hasPackage; // Default value of bool is false
+    [SerializeField] float destroyDelay = 0.1f; // Delay before destroying the package
+
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
     //    Debug.Log("Ough!!! It's you: " + collision.gameObject.name);
@@ -17,7 +20,7 @@ public class Delivery : MonoBehaviour
         {
             Debug.Log(other.gameObject.name + " was picked up!");
             hasPackage = true;
-            Destroy(other.gameObject, 0.1f); // Destroy the package after 0.1 seconds
+            Destroy(other.gameObject, destroyDelay); // Destroy the package after the specified delay
         }
 
         if (other.CompareTag("Customer") && hasPackage)

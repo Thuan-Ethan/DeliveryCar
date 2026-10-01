@@ -20,28 +20,15 @@ public class Delivery : MonoBehaviour
         {
             Debug.Log(other.gameObject.name + " was picked up!");
             hasPackage = true;
+            GetComponent<ParticleSystem>().Play(); // Play the particle system when the package is picked up
             Destroy(other.gameObject, destroyDelay); // Destroy the package after the specified delay
         }
 
         if (other.CompareTag("Customer") && hasPackage)
         {
             Debug.Log("You delivered the package to: " + other.gameObject.name);
+            GetComponent<ParticleSystem>().Stop(); // Stop the particle system when the package is delivered
             hasPackage = false; // if the package is delivered, then set hasPackage to false
         }
-
-        // Insted of use if statement, we can use switch statement to check the tag of the other game object
-        //switch (other.tag)
-        //{
-        //    case "Package":
-        //        Debug.Log(other.gameObject.name + "was Pick up!");
-        //        break;
-        //    case "Customer":
-        //        Debug.Log("The package was delivered to " + other.gameObject.name);
-        //        break;
-        //    default:
-        //        Debug.Log("You hit something else: " + other.gameObject.name);
-        //        break;
-        //}
-        //Debug.Log("Ahhhh you ran over me!!! Yesss it's you: " + other.gameObject.name);
     }
 }

@@ -651,7 +651,7 @@ Transform:
   m_GameObject: {fileID: 118670708}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6328814, y: -0.83, z: -10}
+  m_LocalPosition: {x: -3.6329758, y: -0.83, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2793,7 +2793,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6328814, y: -0.83, z: -10}
+  m_LocalPosition: {x: -3.6329758, y: -0.83, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8949,59 +8949,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!1 &1357608988
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1357608990}
-  - component: {fileID: 1357608989}
-  m_Layer: 0
-  m_Name: BoostItemSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1357608989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357608988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c567dc3575e160c42aff784bf806ea01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PackageSpawner
-  packagePrefab: {fileID: 5725515062464523624, guid: 177f264aea5ce2049872df78da95e44c, type: 3}
-  maxPackages: 3
-  spawnInterval: 3
-  areaMin: {x: -20.7, y: -15.44}
-  areaMax: {x: 23.07, y: 18.3}
-  blockedLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  checkRadius: 0.5
---- !u!4 &1357608990
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357608988}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.38, y: 3.07, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1368410616
 GameObject:
   m_ObjectHideFlags: 0
@@ -10949,10 +10896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Driver
   steerSpeed: 200
-  moveSpeed: 10
-  boostSpeed: 10
-  regularSpeed: 10
-  destroyDelay: 0.1
+  moveSpeed: 12
 --- !u!50 &1789166676
 Rigidbody2D:
   serializedVersion: 5
@@ -11201,7 +11145,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.49622637, b: 0.9846563, a: 1}
+      maxColor: {r: 0.93962264, g: 0.54427195, b: 0.9051632, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14924,4 +14868,3 @@ SceneRoots:
   - {fileID: 2002845778}
   - {fileID: 1368410617}
   - {fileID: 1589678665}
-  - {fileID: 1357608990}

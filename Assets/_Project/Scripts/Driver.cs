@@ -6,7 +6,9 @@ public class Driver : MonoBehaviour
     // Set the speed of the car's steering and movement
     [SerializeField] float steerSpeed = .5f;
     [SerializeField] float moveSpeed = .05f;
-
+    [SerializeField] float boostSpeed = 10f; // Boost speed multiplier
+    [SerializeField] float regularSpeed = 10f; // Regular speed multiplier
+    [SerializeField] float destroyDelay = 0.1f;
     // Update is called once per frame
     void Update()
     {
@@ -46,5 +48,25 @@ public class Driver : MonoBehaviour
 
         transform.Rotate(0, 0, steerAmount);
         transform.Translate(0f, moveAmount, 0);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag("Boost"))
+        {
+            Debug.Log("You picked up a boost!");
+            // Implement boost logic here
+            moveSpeed += boostSpeed * 0.5f; // Set the current speed to the boost speed
+            Destroy(collision.gameObject, destroyDelay); // Destroy the boost object after the specified delay      
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+            Debug.Log("You hit an obstacle!");
+            // Implement obstacle logic here
+            moveSpeed = regularSpeed; // Reset the speed to regular speed
+
     }
 }

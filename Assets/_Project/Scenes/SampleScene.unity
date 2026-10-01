@@ -651,7 +651,7 @@ Transform:
   m_GameObject: {fileID: 118670708}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6328542, y: -0.83, z: -10}
+  m_LocalPosition: {x: -3.632842, y: -0.83, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2853,7 +2853,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6328542, y: -0.83, z: -10}
+  m_LocalPosition: {x: -3.632842, y: -0.83, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10868,8 +10868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0316e131526644e4a9f56a103b968db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Driver
-  steerSpeed: 100
-  moveSpeed: 10
+  steerSpeed: 200
+  moveSpeed: 12
 --- !u!50 &1789166676
 Rigidbody2D:
   serializedVersion: 5

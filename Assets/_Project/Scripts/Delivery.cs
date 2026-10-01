@@ -13,10 +13,11 @@ public class Delivery : MonoBehaviour
     {
 
         // If the tag is Pakage then print out the message to the console
-        if (other.CompareTag("Package")) // Or you can use: if (other.CompareTag("Package"))
+        if (other.CompareTag("Package"))
         {
             Debug.Log(other.gameObject.name + " was picked up!");
             hasPackage = true;
+            Destroy(other.gameObject, 0.1f); // Destroy the package after 0.1 seconds
         }
 
         if (other.CompareTag("Customer") && hasPackage)

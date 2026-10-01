@@ -13,7 +13,7 @@ public class Delivery : MonoBehaviour
     {
 
         // If the tag is Pakage then print out the message to the console
-        if (other.CompareTag("Package"))
+        if (other.CompareTag("Package") && !hasPackage)
         {
             Debug.Log(other.gameObject.name + " was picked up!");
             hasPackage = true;

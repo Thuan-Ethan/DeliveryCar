@@ -1,5 +1,7 @@
 using UnityEngine; 
 using UnityEngine.InputSystem;
+using TMPro;
+using Unity.VisualScripting;
 
 public class Driver : MonoBehaviour
 {
@@ -9,31 +11,16 @@ public class Driver : MonoBehaviour
     [SerializeField] float boostSpeed = 10f; // Boost speed multiplier
     [SerializeField] float regularSpeed = 10f; // Regular speed multiplier
     [SerializeField] float destroyDelay = 0.1f;
+
+    [SerializeField] TMP_Text boostText;
+
+    void Start()
+    {
+        boostText.gameObject.SetActive(false); // Hide the boost text at the start
+    }
     // Update is called once per frame
     void Update()
     {
-
-        //// Use the new Input System to check for keyboard input and steer the car left or right and Forward, Backward
-        //if (Keyboard.current.aKey.isPressed)
-        //{
-        //    steer = 1f;
-        //    //Debug.Log("Steering Left");
-        //}
-        //else if (Keyboard.current.dKey.isPressed)
-        //{
-        //    steer = -1f;
-        //    //Debug.Log("Steering Right");
-        //}
-        //else if (Keyboard.current.wKey.isPressed)
-        //{
-        //    move = 1f;
-        //    //Debug.Log("Moving Forward");
-        //}
-        //else if (Keyboard.current.sKey.isPressed)
-        //{
-        //    move = -1f;
-        //    //Debug.Log("Moving Backward");
-        //}
 
         var kb = Keyboard.current;
         // Check if the keyboard is not null to avoid null reference exception
@@ -58,15 +45,20 @@ public class Driver : MonoBehaviour
             Debug.Log("You picked up a boost!");
             // Implement boost logic here
             moveSpeed += boostSpeed * 0.5f; // Set the current speed to the boost speed
-            Destroy(collision.gameObject, destroyDelay); // Destroy the boost object after the specified delay      
+            boostText.gameObject.SetActive(true); // Show the boost text
+            Destroy(collision.gameObject, destroyDelay); // Destroy the boost object after the specified delay    
+            
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-            Debug.Log("You hit an obstacle!");
+        if (collision.gameObject.CompareTag("WorldCollision"))
+        {
             // Implement obstacle logic here
             moveSpeed = regularSpeed; // Reset the speed to regular speed
+            boostText.gameObject.SetActive(false); // Hide the boost text then collided to the wall
+        }
 
     }
 }
